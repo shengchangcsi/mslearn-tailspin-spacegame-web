@@ -54,6 +54,10 @@ steps:
     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
+- script: 'echo Build.Reason: $(Build.Reason), Agent.BuildDirectory: $(Agent.BuildDirectory), Pipeline.Workspace: $(Pipeline.Workspace), System.HostType: $(System.HostType), System.PullRequest.IsFork: $(System.PullRequest.IsFork), System.PullRequest.PullRequestId: $(System.PullRequest.PullRequestId), System.PullRequest.PullRequestNumber: $(System.PullRequest.PullRequestNumber), System.PullRequest.TargetBranch: $(System.PullRequest.TargetBranch), System.TeamProject: $(System.TeamProject)'
+  displayName: 'Write a little predefined variables'
+  workingDirectory: $(wwwrootDir)
+
 - task: WhiteSource Bolt@20
   displayName: '1st Run WhiteSource Bolt'
   condition: |
