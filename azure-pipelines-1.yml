@@ -1,0 +1,90 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      echo '0000011'
+      az --version
+      echo '0000022'
+      kubectl version --client true
+
+- task: AzurePowerShell@5
+  inputs:
+    azureSubscription: 'Resource Manager - 009 - Space Game'
+    ScriptType: 'InlineScript'
+    Inline: |
+      # You can write your azure powershell scripts inline here. 
+      # You can also pass predefined and custom variables to this script using arguments
+      
+      Write-Host 'Hi'
+      echo '0000011'
+      az --version
+      echo '0000022'
+      kubectl version --client true
+    azurePowerShellVersion: 'LatestVersion'
+
+- task: AzurePowerShell@5
+  inputs:
+    azureSubscription: 'Resource Manager - 009 - Space Game'
+    ScriptType: 'InlineScript'
+    Inline: |
+      # You can write your azure powershell scripts inline here. 
+      # You can also pass predefined and custom variables to this script using arguments
+      echo '0000011'
+      az --version
+      echo '0000022'
+      kubectl version --client true
+    preferredAzurePowerShellVersion: '3.1.0'
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Resource Manager - 009 - Space Game'
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      echo '0000011'
+      az --version
+      echo '0000022'
+      kubectl version --client true
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Resource Manager - 009 - Space Game'
+    scriptType: 'pscore'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      echo '0000011'
+      az --version
+      echo '0000022'
+      kubectl version --client true
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Resource Manager - 009 - Space Game'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      echo '0000011'
+      az --version
+      echo '0000022'
+      kubectl version --client true
