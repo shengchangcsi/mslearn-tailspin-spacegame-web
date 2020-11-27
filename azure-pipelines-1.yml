@@ -92,7 +92,7 @@ steps:
 - task: AzureCLI@2
   inputs:
     azureSubscription: '即用即付(18ee0ec7-16a4-4649-90d8-245057b3f074)'
-    scriptType: 'ps'
+    scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: 'echo ''Hi guys'''
     addSpnToEnvironment: true
