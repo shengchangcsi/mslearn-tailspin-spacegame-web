@@ -30,7 +30,7 @@ steps:
 
 - task: AzurePowerShell@5
   inputs:
-    azureSubscription: 'Resource Manager - 009 - Space Game'
+    azureSubscription: '即用即付(18ee0ec7-16a4-4649-90d8-245057b3f074)'
     ScriptType: 'InlineScript'
     Inline: |
       # You can write your azure powershell scripts inline here. 
@@ -45,7 +45,7 @@ steps:
 
 - task: AzurePowerShell@5
   inputs:
-    azureSubscription: 'Resource Manager - 009 - Space Game'
+    azureSubscription: '即用即付(18ee0ec7-16a4-4649-90d8-245057b3f074)'
     ScriptType: 'InlineScript'
     Inline: |
       # You can write your azure powershell scripts inline here. 
@@ -58,7 +58,7 @@ steps:
 
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'Resource Manager - 009 - Space Game'
+    azureSubscription: '即用即付(18ee0ec7-16a4-4649-90d8-245057b3f074)'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -69,7 +69,7 @@ steps:
 
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'Resource Manager - 009 - Space Game'
+    azureSubscription: '即用即付(18ee0ec7-16a4-4649-90d8-245057b3f074)'
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -80,7 +80,7 @@ steps:
 
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'Resource Manager - 009 - Space Game'
+    azureSubscription: '即用即付(18ee0ec7-16a4-4649-90d8-245057b3f074)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
