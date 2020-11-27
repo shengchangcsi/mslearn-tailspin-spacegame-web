@@ -56,6 +56,7 @@ steps:
       kubectl version --client true
     preferredAzurePowerShellVersion: '3.1.0'
 
+## Shirley Wang(Shanghai Wicresoft Co,.Ltd.) <v-shirlw@microsoft.com> 我查阅了下面链接里的关于Azure CLI task官方文档，看到这样的描述--“Select bash/pscore script when running on Linux agent or batch/ps/pscore script when running on Windows agent. ” 
 # - task: AzureCLI@2
 #   inputs:
 #     azureSubscription: '即用即付(18ee0ec7-16a4-4649-90d8-245057b3f074)'
@@ -67,27 +68,27 @@ steps:
 #       echo '0000022'
 #       kubectl version --client true
 
-# - task: AzureCLI@2
-#   inputs:
-#     azureSubscription: '即用即付(18ee0ec7-16a4-4649-90d8-245057b3f074)'
-#     scriptType: 'pscore'
-#     scriptLocation: 'inlineScript'
-#     inlineScript: |
-#       echo '0000011'
-#       az --version
-#       echo '0000022'
-#       kubectl version --client true
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: '即用即付(18ee0ec7-16a4-4649-90d8-245057b3f074)'
+    scriptType: 'pscore'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      echo '0000011'
+      az --version
+      echo '0000022'
+      kubectl version --client true
 
-# - task: AzureCLI@2
-#   inputs:
-#     azureSubscription: '即用即付(18ee0ec7-16a4-4649-90d8-245057b3f074)'
-#     scriptType: 'bash'
-#     scriptLocation: 'inlineScript'
-#     inlineScript: |
-#       echo '0000011'
-#       az --version
-#       echo '0000022'
-#       kubectl version --client true
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: '即用即付(18ee0ec7-16a4-4649-90d8-245057b3f074)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      echo '0000011'
+      az --version
+      echo '0000022'
+      kubectl version --client true
 
 - task: AzureCLI@2
   inputs:
